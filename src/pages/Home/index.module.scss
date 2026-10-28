@@ -1,0 +1,132 @@
+.home-container {
+  padding: 60px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header-section {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.main-title {
+  background: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 3.5rem !important;
+  font-weight: 800 !important;
+  margin-bottom: 8px !important;
+  letter-spacing: 2px;
+}
+
+.sub-title {
+  font-size: 1.2rem;
+  color: #94a3b8 !important;
+  letter-spacing: 1px;
+}
+
+.card-cover {
+  height: 220px;
+  background: #000;
+  overflow: hidden;
+  position: relative;
+  /* 避免 Canvas 溢出 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.canvas-card {
+  background: rgba(255, 255, 255, 0.03) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 16px !important;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow:
+      0 20px 40px rgba(0, 0, 0, 0.4),
+      0 0 20px rgba(56, 189, 248, 0.2) !important;
+    border-color: rgba(56, 189, 248, 0.4) !important;
+  }
+}
+/* ⭐ 搜索与分类控制面板 */
+.control-panel {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #fff !important;
+  border-radius: 24px !important;
+  padding: 10px 24px !important;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+
+  &:hover,
+  &:focus-within {
+    border-color: #38bdf8 !important;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.2) !important;
+  }
+
+  input {
+    background: transparent !important;
+    color: #fff !important;
+    &::placeholder {
+      color: #64748b;
+    }
+  }
+}
+
+/* 隐藏搜索框自带的一些背景 */
+:global(.ant-input-affix-wrapper) {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Tabs 样式定制 */
+.category-tabs {
+  width: 100%;
+
+  :global(.ant-tabs-nav) {
+    margin-bottom: 0;
+  }
+  :global(.ant-tabs-tab) {
+    color: #94a3b8 !important;
+    font-size: 16px;
+    padding: 12px 16px;
+    transition: all 0.3s;
+
+    &:hover {
+      color: #e2e8f0 !important;
+    }
+  }
+  :global(.ant-tabs-tab-active .ant-tabs-tab-btn) {
+    color: #38bdf8 !important;
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+  }
+  :global(.ant-tabs-ink-bar) {
+    background: linear-gradient(90deg, #38bdf8, #818cf8) !important;
+    height: 3px !important;
+    border-radius: 3px;
+  }
+}
+
+.empty-state {
+  padding: 80px 0;
+  text-align: center;
+  :global(.ant-empty-description) {
+    color: #64748b !important;
+  }
+}
